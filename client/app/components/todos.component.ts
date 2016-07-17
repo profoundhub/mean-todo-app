@@ -12,13 +12,30 @@ import 'rxjs/add/operator/map';
 export class TodosComponent implements OnInit {
   todos: Todo[];
 
-  constructor (private _todoService: TodoService) { }
-
+  constructor (private _todoService: TodoService) {}
   ngOnInit() {
     this.todos = [];
     this._todoService.getTodos()
       .map(res => res.json())
       .subscribe(todos => this.todos = todos);
   }
-
+/*
+  addTodo($event, todoText) {
+    // console.log(todoText.value);
+    if ($event.which=1){
+      // console.log(todoText.value);
+      let results;
+      let newTodo = {
+        text.todoText.value,
+        isCompleted: false;
+      };
+      results = this._todoServices.saveTodo(newTodo);
+      results.subscribe(x => {
+        this._todos.push(newTodo)
+        todoText.value='';
+      });
+    }
+  }
+  */
+  
 }

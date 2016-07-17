@@ -3,7 +3,7 @@
     <div class="form-group">
       <input class="form-control input-lg" placeholder="Add a TO-DO &hellip;" autofocus #todotext>
       <br />
-      <button class="btn btn-primary btn-block">Create</button>
+      <button class="addTodo($event, todotext)" class="btn btn-primary btn-block">Create</button>
     </div>
   </div>
 
@@ -11,18 +11,16 @@
   <div class="alert alert-info text-center" [hidden]="todos.length > 0">
     <h3>No To-Do's to do ... lol</h3>
   </div>
-
   <div *ngFor="let todo of todos" class="col-md-12 todo">
     <div class="col-md-1">
       <input type="checkbox">
     </div>
     <div class="col-md-7">
-      {{todo.text}}
+      <!-- {{todo.text}} -->
     </div>
-    <div class="col-md-4 btn">
-      <!-- Delete Button -->
-      <input type="button" value="Delete" class="btn btn-danger pull-right">
+    <div class="col-md-4 btns">
       <input type="button" value="Edit" class="btn btn-primary pull-right">
+      <input type="button" value="Delete" class="btn btn-danger pull-right">
     </div>
   </div>
 </div>
