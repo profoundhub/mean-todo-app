@@ -20,15 +20,13 @@ export class TodosComponent implements OnInit {
       .subscribe(todos => this.todos = todos);
   }
 
-/*
-
   addTodo($event, todoText) {
     // console.log(todoText.value);
     if ($event.which=1){
       // console.log(todoText.value);
       let results;
       let newTodo = {
-        text.todoText.value,
+        text: todoText.value,
         isCompleted: false;
       };
       results = this._todoServices.saveTodo(newTodo);
@@ -38,7 +36,5 @@ export class TodosComponent implements OnInit {
       });
     }
   }
-
-  */
 
 }

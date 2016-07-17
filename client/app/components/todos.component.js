@@ -22,6 +22,23 @@ var TodosComponent = (function () {
             .map(function (res) { return res.json(); })
             .subscribe(function (todos) { return _this.todos = todos; });
     };
+    TodosComponent.prototype.addTodo = function ($event, todoText) {
+        var _this = this;
+        // console.log(todoText.value);
+        if ($event.which = 1) {
+            // console.log(todoText.value);
+            var results = void 0;
+            var newTodo_1 = {
+                text: todoText.value,
+                isCompleted: false
+            };
+            results = this._todoServices.saveTodo(newTodo_1);
+            results.subscribe(function (x) {
+                _this._todos.push(newTodo_1);
+                todoText.value = '';
+            });
+        }
+    };
     TodosComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
