@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { TodosComponent } from './components/todos.component';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  template: '<h1>My MEAN Angular 2 App</h1>'
+  templateUrl: 'app.component.html'
+  directives: [TodosComponent]
 })
 
 export class AppComponent { }
