@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _this = this;
 var core_1 = require('@angular/core');
 var todos_service_1 = require('../services/todos.service');
+var Todo_1 = require('../Todo');
+require('rxjs/add/operator/map');
 var TodosComponent = (function () {
-    function TodosComponent(_todoService) {
-        this._todoService = _todoService;
-        todos: Todo[];
+    function TodosComponent() {
     }
     TodosComponent = __decorate([
         core_1.Component({
@@ -21,10 +22,24 @@ var TodosComponent = (function () {
             selector: 'todos',
             templateUrl: 'todos.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof todos_service_1.TodoService !== 'undefined' && todos_service_1.TodoService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [])
     ], TodosComponent);
     return TodosComponent;
-    var _a;
 }());
 exports.TodosComponent = TodosComponent;
+implement;
+core_1.OnInit;
+{
+    todos: Todo_1.Todo[];
+    constructor(private, _todoService, todos_service_1.TodoService);
+    {
+    }
+    ngOnInit();
+    {
+        this.todos = [];
+        this._todoService.getTodos()
+            .map(function (res) { return res.json(); })
+            .subscribe(function (todos) { return _this.todos = todos; });
+    }
+}
 //# sourceMappingURL=todos.component.js.map

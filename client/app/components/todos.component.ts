@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todos.service';
+import { Todo } from '../Todo';
+import 'rxjs/add/operator/map';
 
 @Component({
   moduleId: module.id,
@@ -7,8 +9,17 @@ import { TodoService } from '../services/todos.service';
   templateUrl: 'todos.component.html'
 })
 
-export class TodosComponent {
+export class TodosComponent implement OnInit {
+  todos: Todo[];
+
   constructor (private _todoService: TodoService) {
-    todos: Todo[];
   }
+
+  ngOnInit() {
+    this.todos = [];
+    this._todoService.getTodos()
+      .map(res => res.json())
+      .subscribe(todos => this.todos = todos);
+  }
+
 }
