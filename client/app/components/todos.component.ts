@@ -19,7 +19,9 @@ export class TodosComponent implements OnInit {
       .map(res => res.json())
       .subscribe(todos => this.todos = todos);
   }
+
 /*
+
   addTodo($event, todoText) {
     // console.log(todoText.value);
     if ($event.which=1){
@@ -36,6 +38,7 @@ export class TodosComponent implements OnInit {
       });
     }
   }
+
   */
-  
+
 }
