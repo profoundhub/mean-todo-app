@@ -3,7 +3,7 @@
     <div class="form-group">
       <input class="form-control input-lg" placeholder="Add a TO-DO &hellip;" autofocus #todotext>
       <br />
-      <button class="addTodo($event, todotext)" class="btn btn-primary btn-block">Create</button>
+      <button (click)="addTodo($event, todotext)" class="btn btn-primary btn-block">Create</button>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
       <input type="checkbox">
     </div>
     <div class="col-md-7">
-      {{todo.text}} 
+      {{todo.text}}
     </div>
     <div class="col-md-4 btns">
       <input type="button" value="Edit" class="btn btn-primary pull-right">

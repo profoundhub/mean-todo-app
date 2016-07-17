@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class TodosComponent implements OnInit {
   todos: Todo[];
 
-  constructor (private _todoService: TodoService) {}
+  constructor(private _todoService: TodoService) {}
   ngOnInit() {
     this.todos = [];
     this._todoService.getTodos()
@@ -22,19 +22,18 @@ export class TodosComponent implements OnInit {
 
   addTodo($event, todoText) {
     // console.log(todoText.value);
-    if ($event.which=1){
-      // console.log(todoText.value);
-      let results;
+    if ($event.which === 1) {
+        console.log(todoText.value);
+      let result;
       let newTodo = {
         text: todoText.value,
-        isCompleted: false;
+        isCompleted: false
       };
-      results = this._todoServices.saveTodo(newTodo);
-      results.subscribe(x => {
+      result = this._todoService.saveTodo(newTodo);
+      result.subscribe(x => {
         this._todos.push(newTodo)
         todoText.value='';
       });
     }
   }
-
 }

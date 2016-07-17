@@ -25,15 +25,15 @@ var TodosComponent = (function () {
     TodosComponent.prototype.addTodo = function ($event, todoText) {
         var _this = this;
         // console.log(todoText.value);
-        if ($event.which = 1) {
-            // console.log(todoText.value);
-            var results = void 0;
+        if ($event.which === 1) {
+            console.log(todoText.value);
+            var result = void 0;
             var newTodo_1 = {
                 text: todoText.value,
                 isCompleted: false
             };
-            results = this._todoServices.saveTodo(newTodo_1);
-            results.subscribe(function (x) {
+            result = this._todoService.saveTodo(newTodo_1);
+            result.subscribe(function (x) {
                 _this._todos.push(newTodo_1);
                 todoText.value = '';
             });
