@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>Daniel's To DO App (NG2 + MEAN Stack!)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
   </head>
+  <!-- 3. Display the application -->
   <body>
-  <h1>NG2 + MEAN Stack</h1>
-  MEAN = Full-Stack JavaScript Using MongoDB, Express, AngularJS 2 & NodeJS
+    <my-app>Loading...</my-app>
+
+    <h1>NG2 + MEAN Stack</h1>
+    MEAN = Full-Stack JavaScript Using MongoDB, Express, AngularJS 2 & NodeJS
+
 
   </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "mean2do",
+  "description": "Just a Simple To-Do App made using Angular 2 and the MEAN stack",
+  "main": "server.js",
+  "authors": [
+    "Daniel Lim <angular2mean@profoundideation.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/profoundhub/mean-todo-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

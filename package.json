@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Danie Lim",
+  "author": "Daniel Lim",
   "license": "ISC",
   "description": "Just a Simple To-Do App made using Angular 2 and the MEAN stack"
 }
