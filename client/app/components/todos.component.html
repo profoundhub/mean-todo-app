@@ -12,8 +12,22 @@
 
 <div class="todo-list">
   <div class="alert alert-info text-center" [hidden]="todo.length > 0">
-    <h3>
-      Title: {{}}  
-    </h3>
+    <h3>No To-Do's</h3>
   </div>
+
+  <div class="col-md-1">
+    <input type="checkbox" name="name" value="">
+  </div>
+
+  <div class="col-md-7">
+    Some ToDo's ?
+
+  </div>
+  <div class="col-md-4 btn">
+    <!-- Delete Button -->
+    <input type="button" name="name" value="Delete" class="btn btn-danger pull-right">
+    <input type="button" name="name" value="Edit" class="btn btn-primary pull-right">
+
+  </div>
+
 </div>
