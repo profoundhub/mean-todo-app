@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-@injectable()
+@Injectable()
 
 export class TodoService {
 
@@ -10,7 +10,7 @@ export class TodoService {
   }
 
   getTodos() {
-    return this._http.get('/api/v1.todos');
+      return this._http.get('/api/v1.todos');
   }
 
 }
