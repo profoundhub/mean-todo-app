@@ -14,8 +14,9 @@ var TodosComponent = (function () {
     }
     TodosComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'todos',
-            template: '<h1>TO-DO List</h1>'
+            templateUrl: 'todos.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], TodosComponent);

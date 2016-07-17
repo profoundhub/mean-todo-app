@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'todos',
-  template: '<h1>TO-DO List</h1>'
+  templateUrl: 'todos.component.html'  
 })
 
 export class TodosComponent { }
