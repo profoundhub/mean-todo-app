@@ -16,7 +16,7 @@ var TodoService = (function () {
         this._http = _http;
     }
     TodoService.prototype.getTodos = function () {
-        return this._http.get('/api/v1.todos');
+        return this._http.get('/api/v1/todos');
     };
     TodoService = __decorate([
         core_1.Injectable(), 

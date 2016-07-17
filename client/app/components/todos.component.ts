@@ -10,11 +10,9 @@ import 'rxjs/add/operator/map';
 })
 
 export class TodosComponent implements OnInit {
-
   todos: Todo[];
 
-  constructor (private _todoService: TodoService) {
-  }
+  constructor (private _todoService: TodoService) { }
 
   ngOnInit() {
     this.todos = [];
