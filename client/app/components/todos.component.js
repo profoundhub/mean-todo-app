@@ -34,7 +34,7 @@ var TodosComponent = (function () {
             };
             result = this._todoService.saveTodo(newTodo_1);
             result.subscribe(function (x) {
-                _this._todos.push(newTodo_1);
+                _this.todos.push(newTodo_1);
                 todoText.value = '';
             });
         }

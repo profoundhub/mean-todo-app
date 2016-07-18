@@ -31,7 +31,7 @@ export class TodosComponent implements OnInit {
       };
       result = this._todoService.saveTodo(newTodo);
       result.subscribe(x => {
-        this._todos.push(newTodo)
+        this.todos.push(newTodo)
         todoText.value='';
       });
     }

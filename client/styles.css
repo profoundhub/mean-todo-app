@@ -7,7 +7,19 @@ body {
   margin: 2em;
 }
 
+#MeanNinja {     
+  background-image: url("images/MEAN-Ninja.png");
+  background-position: right bottom; /*Positioning*/
+  background-repeat: no-repeat; /*Prevent showing multiple background images*/
+  position: static;
+  height: 350px;
+  width: 100%;
+  float: right;
+}
+
  /*
   * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
   * for the full set of master styles used by the documentation samples
   */
+
+
