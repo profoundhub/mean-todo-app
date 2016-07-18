@@ -16,11 +16,16 @@
       <input type="checkbox">
     </div>
     <div class="col-md-7">
+      <span [class.hidden]="todo.isEditMode">{{todo.text}}</span>
+      <input type="text" [class.hidden]="!todo.isEditMode" [value]="todo.text" (keypress)="updateTodoText($event, todo)" />
+      <input type="button" [class.hidden]="!todo.isEditMode" value="Cancel" (click)="setEditState(todo, false)" class="btn btn-warning" />
       {{todo.text}}
+      
     </div>
     <div class="col-md-4 btns">
-      <input type="button" value="Edit" class="btn btn-primary pull-right">
-      <input type="button" value="Delete" class="btn btn-danger pull-right">
+      <input type="button" (click)="setEditState(todo, false)" value="Edit" class="btn btn-primary pull-right">
+      <input type="button" [class.disabled]="todo.isCompleted" (click)="setEditState(todo, true)" value="Delete" class="btn btn-danger pull-right">
+      
     </div>
   </div>
 </div>

@@ -24,7 +24,6 @@ var TodosComponent = (function () {
     };
     TodosComponent.prototype.addTodo = function ($event, todoText) {
         var _this = this;
-        // console.log(todoText.value);
         if ($event.which === 1) {
             console.log(todoText.value);
             var result = void 0;
@@ -37,6 +36,31 @@ var TodosComponent = (function () {
                 _this.todos.push(newTodo_1);
                 todoText.value = '';
             });
+        }
+    };
+    TodosComponent.prototype.UpdatesTodoText = function ($event, todoText) {
+        var _this = this;
+        if ($event.which === 12) {
+            todo.text = $event.target.value;
+            var _todo = {
+                _id: todo._id,
+                text: todo.text,
+                isCompleted: todo.isCompleted
+            };
+            this._todoService.updatesTodo(_todo)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.setEditState(todo, false);
+            });
+        }
+    };
+    TodosComponent.prototype.UpdatesStatus = function ($event, todoText) { };
+    TodosComponent.prototype.setEditState = function (todo, state) {
+        if (state) {
+            todo.isEditMode = state;
+        }
+        else {
+            delete todo.isEditMode;
         }
     };
     TodosComponent = __decorate([
