@@ -18,7 +18,7 @@
     <div class="col-md-7">
       <span [class.hidden]="todo.isEditMode">{{todo.text}}</span>
       <input type="text" [class.hidden]="!todo.isEditMode" [value]="todo.text" (keypress)="updatesTodoText($event, todo)" />
-      <input type="button" [class.hidden]="!todo.isEditMode" value="Cancel&nbsp;&dagger;" (click)="setEditState(todo, false)" class="btn btn-warning" />
+      <input type="button" [class.hidden]="!todo.isEditMode" value="Cancel&nbsp;&dagger;" (click)="setEditState(todo, false)" class="btn btn-warning" /> <!-- *ngFor="!todo.isEditMode" -->
     </div>
     <div class="col-md-4 btns">
       
@@ -30,8 +30,6 @@
       class="btn btn-primary pull-right">
       
     </div>
-     
-     
   </div>
   &dagger; Press <strong>Enter</strong> to Save Changes
 </div>
