@@ -16,13 +16,13 @@ export class TodoService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');      
         return this._http.post('/api/v1/todo', JSON.stringify(todo),
-            {headers:headers}).map(res => res.json());
+            {headers:headers});
     }
-    
+    /* .map(res => res.json()) */
      updatesTodo(todo) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');      
-        return this._http.put('/api/v1/todo'+todo._id, JSON.stringify(todo),
-            {headers:headers}).map(res => res.json());
+        return this._http.put('/api/v1/todo/'+todo._id, JSON.stringify(todo),
+            {headers:headers});
     }
 }

@@ -38,9 +38,9 @@ var TodosComponent = (function () {
             });
         }
     };
-    TodosComponent.prototype.UpdatesTodoText = function ($event, todoText) {
+    TodosComponent.prototype.updatesTodoText = function ($event, todo) {
         var _this = this;
-        if ($event.which === 12) {
+        if ($event.which === 13) {
             todo.text = $event.target.value;
             var _todo = {
                 _id: todo._id,
@@ -54,7 +54,18 @@ var TodosComponent = (function () {
             });
         }
     };
-    TodosComponent.prototype.UpdatesStatus = function ($event, todoText) { };
+    TodosComponent.prototype.updatesStatus = function (todo) {
+        var _todo = {
+            _id: todo._id,
+            text: todo.text,
+            isCompleted: !todo.isCompleted
+        };
+        this._todoService.updatesTodo(_todo)
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            todo.isCompleted = !todo.isCompleted;
+        });
+    };
     TodosComponent.prototype.setEditState = function (todo, state) {
         if (state) {
             todo.isEditMode = state;
